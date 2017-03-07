@@ -167,6 +167,7 @@ Module.register("MMM-Sonarr-Calendar", {
 
     getScripts: function() {
         return [
+            'moment.js',
             'https://code.jquery.com/jquery-2.2.3.min.js',
             'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js',
             'https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js',
