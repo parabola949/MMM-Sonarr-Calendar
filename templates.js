@@ -18,7 +18,7 @@ this["MMMSonarrCalendar"]["Templates"]["slide"] = Handlebars.template({"compiler
     + alias4(((helper = (helper = helpers.seriesPoster || (depth0 != null ? depth0.seriesPoster : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"seriesPoster","hash":{},"data":data}) : helper)))
     + "\" alt=\""
     + alias4(((helper = (helper = helpers.seriesName || (depth0 != null ? depth0.seriesName : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"seriesName","hash":{},"data":data}) : helper)))
-    + "\" class=\"img-responsive\" />\n		</div>\n		<div class=\"slide-copy\">\n			<h4 class=\"bright\">\n				<span class=\"title\">"
+    + "\" class=\"img-responsive\" />\n		</div>\n		<div class=\"slide-copy\">\n			<h4 class=\"bright\">\n				<span class=\"title\" style=\"padding-right:10px\">"
     + alias4(((helper = (helper = helpers.seriesName || (depth0 != null ? depth0.seriesName : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"seriesName","hash":{},"data":data}) : helper)))
     + "</span>\n				<span class=\"info\">"
     + alias4(((helper = (helper = helpers.seString || (depth0 != null ? depth0.seString : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"seString","hash":{},"data":data}) : helper)))
