@@ -259,11 +259,13 @@ Module.register("MMM-Sonarr-Calendar", {
     },
 
     getSeriesPoster: function(images){
-        for(var image in images){
-            if (image.coverType == 'banner'){
-                return image.remoteUrl;
+        var ret = '';
+        images.forEach(function(img){
+            if (img.coverType == 'banner'){
+                ret = img.remoteUrl;
             }
-        }
+        });
+        return ret;
     },
 
     // Override dom generator.
