@@ -261,7 +261,7 @@ Module.register("MMM-Sonarr-Calendar", {
     getSeriesPoster: function(images){
         var ret = '';
         images.forEach(function(img){
-            if (img.coverType == 'banner'){
+            if (img.coverType == 'poster'){
                 ret = img.remoteUrl;
             }
         });
