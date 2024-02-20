@@ -4,7 +4,7 @@ This is a module for MagicMirror, intended to show the upcoming episodes from So
 ## Installing the module
 Clone this repository in your `~/MagicMirror/modules/` folder `( $ cd ~MagicMirror/modules/ )`:
 ````javascript
-git clone https://github.com/s-cotton/MMM-Sonarr-Calendar.git
+git clone https://github.com/parabola949/MMM-Sonarr-Calendar.git
 ````
 
 ## Using the module
