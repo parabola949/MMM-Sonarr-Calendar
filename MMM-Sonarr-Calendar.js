@@ -191,7 +191,8 @@ Module.register("MMM-Sonarr-Calendar", {
 
     buildApiUrl: function(){
         return this.config.sonarrProtocol + "://" + this.config.sonarrHost + ':' + this.config.sonarrPort 
-        + '/api/calendar?apikey=' + this.config.sonarrAPIKey 
+        + '/api/v3/calendar?apikey=' + this.config.sonarrAPIKey
+		+ '&includeSeries=true'
         + '&start=' + moment().format('YYYY-MM-DD') 
         + '&end=' + moment().add(this.config.totalDays,'days').format('YYYY-MM-DD');
     },
@@ -246,8 +247,8 @@ Module.register("MMM-Sonarr-Calendar", {
             seriesName        : record.series.title,
             seString          : "S" + this.formatSENumber( record.seasonNumber ) + 'E' + this.formatSENumber( record.episodeNumber ),
             episodeName       : record.title,
-            episodeDescription: record.overview,
-            seriesPoster      : this.getSeriesPoster( record.series.id ),
+            episodeDescription: record.series.overview,
+            seriesPoster      : this.getSeriesPoster( record.series.images ),
             episodeDate       : airDate.calendar(),
             id                : record.id
         };
@@ -257,9 +258,12 @@ Module.register("MMM-Sonarr-Calendar", {
         return number < 10 ? '0' + number : number;
     },
 
-    getSeriesPoster: function(seriesId){
-        return this.config.sonarrProtocol + "://" + this.config.sonarrHost + ':' + this.config.sonarrPort 
-            + '/api/MediaCover/' + seriesId + '/poster-250.jpg?apikey=' + this.config.sonarrAPIKey;
+    getSeriesPoster: function(images){
+        for(var image in images){
+            if (image.coverType == 'banner'){
+                return image.remoteUrl;
+            }
+        }
     },
 
     // Override dom generator.
